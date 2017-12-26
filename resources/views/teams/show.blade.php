@@ -5,8 +5,11 @@
 @endsection
 
 @section('content')
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/teams">Teams</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('teams',['id'=>$teams->id]) }}">{{$teams->name}}</a></li>
+    </ol>
     <div class="jumbotron">
-
         <h1>{{$teams->name}}</h1>
         <p>&nbsp;</p>
         <div class="row">
@@ -21,16 +24,13 @@
         <p>&nbsp;</p>
         <p>{{$teams->storyline}}</p>
     </div>
-
-
-            @foreach ($teams->players as $player)
-                <div class="jumbotron mb-5">
-                    <h1><a href="{{ route('players',['id'=>$player->id]) }}">{{$player->first_name}} {{$player->last_name}}</a></h1>
-                    <a href="{{ route('players',['id'=>$player->id]) }}" class="btn btn-primary float-right">Read More</a>
-                </div>
-            @endforeach
-
-
+    @foreach ($teams->players as $player)
+        <div class="jumbotron mb-5">
+            <h1><a href="{{ route('players',['id'=>$player->id]) }}">{{$player->first_name}} {{$player->last_name}}</a>
+            </h1>
+            <a href="{{ route('players',['id'=>$player->id]) }}" class="btn btn-primary float-right">Read More</a>
+        </div>
+    @endforeach
 @endsection
 
 

@@ -5,6 +5,10 @@
 @endsection
 
 @section('content')
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/players">Players</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('players',['id'=>$players->id]) }}">{{$players->first_name}} {{$players->last_name}}</a></li>
+    </ol>
     <div class="jumbotron">
 
         <p>&nbsp;</p>
@@ -17,7 +21,6 @@
             </div>
         </div>
     </div>
-
 @endsection
 
 
