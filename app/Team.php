@@ -6,5 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
-    //
+	protected $guarded = ['id'];
+
+	public static function getAllTeams(){
+		return self::orderBy('created_at', 'DESC')->get();
+	}
+
+	public static function getSingleTeam($id){
+		return self::find($id);
+	}
+
+	public function players(){
+		return $this->hasMany(Player::class)->orderBy('created_at', 'DESC');
+	}
 }
