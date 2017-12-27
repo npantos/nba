@@ -19,4 +19,8 @@ class Team extends Model
 	public function players(){
 		return $this->hasMany(Player::class)->orderBy('created_at', 'DESC');
 	}
+
+	public function comments(){
+		return $this->hasMany(Comment::class)->orderBy('created_at', 'DESC');
+	}
 }
