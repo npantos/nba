@@ -8,6 +8,10 @@ use App\Player;
 
 class TeamsController extends Controller
 {
+	public function __construct() {
+		$this->middleware('auth');
+	}
+
 	protected function index(){
 		$teams = Team::getAllTeams();
 		return view('teams.index',compact("teams"));

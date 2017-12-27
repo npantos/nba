@@ -20,4 +20,4 @@ Route::get('/register', 'RegisterController@create');
 Route::post('/register', 'RegisterController@store');
 Route::get('/logout', 'LoginController@destroy');
 Route::post('/login', 'LoginController@store');
-Route::get('/login', 'LoginController@create');
+Route::get('/login', 'LoginController@create')->name('login');

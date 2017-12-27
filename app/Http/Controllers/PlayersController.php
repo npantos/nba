@@ -8,6 +8,11 @@ use App\Player;
 
 class PlayersController extends Controller
 {
+
+	public function __construct() {
+		$this->middleware('auth');
+	}
+
 	protected function index(){
 		$players = Player::getAllPlayers();
 		return view('players.index',compact("players"));
