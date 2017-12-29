@@ -7,6 +7,13 @@ use App\Comment;
 
 class CommentsController extends Controller
 {
+
+	public function __construct() {
+
+		$this->middleware('ForbiddenComment');
+
+	}
+
 	protected function comments(Request $request){
 
 		$this->validate(request(),[
@@ -15,5 +22,9 @@ class CommentsController extends Controller
 
 		Comment::create($request->all());
 		return redirect(route('teams',['id'=>request('team_id')]));
+	}
+
+	protected function forbidden(){
+		return view('teams.forbidden-comment');
 	}
 }

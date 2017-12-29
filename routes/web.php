@@ -23,3 +23,5 @@ Route::get('/logout', 'LoginController@destroy');
 Route::post('/login', 'LoginController@store');
 Route::get('/login', 'LoginController@create')->name('login');
 Route::post('/comments', 'CommentsController@comments')->name('comments');
+Route::get('/comments/forbidden', 'CommentsController@forbidden')->name('forbidden');
+Route::get('/users/{id}', 'UsersController@show');
