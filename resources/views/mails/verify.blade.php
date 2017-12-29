@@ -1,0 +1,1 @@
+<a href="http://kurs.nba/register/verify/{{$user->id}}"> Molimo vas da verifikujete vaš nalog</a>

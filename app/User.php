@@ -24,8 +24,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token','is_validated'
     ];
+
+	public static function checkIfVerified($email){
+		return self::where('email', '=', $email)->first();
+	}
 
 	public function comments(){
 		return $this->hasMany(Comment::class)->orderBy('created_at', 'DESC');
