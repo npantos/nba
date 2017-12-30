@@ -23,4 +23,10 @@ class Team extends Model
 	public function comments(){
 		return $this->hasMany(Comment::class)->orderBy('created_at', 'DESC');
 	}
+
+	public function news()
+	{
+		return $this->belongsToMany(News::class,'news_teams');
+
+	}
 }

@@ -16,11 +16,15 @@ class News extends Model
 
 	public static function getSingleNews($id){
 		return self::find($id);
-
 	}
 
 	public function user(){
 		return $this->belongsTo(User::class);
 
+	}
+
+	public function teams()
+	{
+		return $this->belongsToMany(Teams::class,'news_teams');
 	}
 }
