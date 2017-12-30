@@ -25,3 +25,5 @@ Route::get('/login', 'LoginController@create')->name('login');
 Route::post('/comments', 'CommentsController@comments')->name('comments');
 Route::get('/comments/forbidden', 'CommentsController@forbidden')->name('forbidden');
 Route::get('/users/{id}', 'UsersController@show');
+Route::get('/news', 'NewsController@index')->name('news');
+Route::get('/news/{id}', 'NewsController@show')->name('news');

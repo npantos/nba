@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -33,5 +34,9 @@ class User extends Authenticatable
 
 	public function comments(){
 		return $this->hasMany(Comment::class)->orderBy('created_at', 'DESC');
+	}
+
+	public function news(){
+		return $this->hasMany(News::class)->orderBy('created_at', 'DESC');
 	}
 }

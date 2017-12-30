@@ -36,10 +36,7 @@
                 <a class="nav-link" href="/players">Players</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/teams/create">Add new team</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/players/create">Add new player</a>
+                <a class="nav-link" href="/news">News</a>
             </li>
 
         </ul>
